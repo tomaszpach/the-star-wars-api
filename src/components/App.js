@@ -10,7 +10,7 @@ import FetchUsers from './FetchUsers';
 import Home from './Home';
 import About from './About';
 
-// todo finish navigation
+// todo finish navigation (make it pretty and shiny)
 
 class App extends Component {
     render() {
@@ -20,9 +20,6 @@ class App extends Component {
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/people">About</Link>
                         </li>
                     </ul>
                     <FetchUsers/>
