@@ -4,13 +4,15 @@ import {
     Link
 } from 'react-router-dom';
 
+import Loader from './Loader'
+
 class ResultsList extends React.Component {
 
-    nameClick(item, index) {
+    // todo change that function name
+    nameClick(item) {
         this.props.dispatch({
             type: 'SELECTED_CHARACTER',
-            selected: item,
-            index: index
+            selected: item
         });
     }
 
@@ -21,7 +23,7 @@ class ResultsList extends React.Component {
 
         return (
             !isLoading ? (
-                // todo rebuild this to better table view?
+                // todo rebuild this to better table view? Boostrap Table
                 // todo add LINK's and onClick actions
                 <div className='characters-table'>
                     <div className='name-column column'>
@@ -29,7 +31,7 @@ class ResultsList extends React.Component {
                         {
                             results.map((item, index) => {
                                 return (
-                                    <Link to="/people/" onClick={() => this.nameClick(item, index)} key={index} className='name detail'>
+                                    <Link to="/people/" onClick={() => this.nameClick(item)} key={index} className='name detail'>
                                         {item.name}
                                     </Link>
                                 )
@@ -62,18 +64,7 @@ class ResultsList extends React.Component {
                     </div>
                 </div>
             ) : (
-                <div className='loader'>
-                    <div className="lds-roller">
-                        <div/>
-                        <div/>
-                        <div/>
-                        <div/>
-                        <div/>
-                        <div/>
-                        <div/>
-                        <div/>
-                    </div>
-                </div>
+                <Loader/>
             )
         );
     }
