@@ -20,7 +20,6 @@ class Films extends React.Component {
                 .then(results => {
                     films.push(results.title);
 
-                    console.log(films);
                     this.setState({
                         films: films
                     })

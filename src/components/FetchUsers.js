@@ -20,7 +20,6 @@ class FetchUsers extends React.Component {
 
     componentDidMount() {
         this.fetchUsers();
-        console.log(this.props.swCharacters.page)
     }
 
     componentDidUpdate(prevProps) {
