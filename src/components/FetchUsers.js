@@ -11,7 +11,6 @@ class FetchUsers extends React.Component {
         fetch(`https://swapi.co/api/people/?page=${page}`)
             .then(response => response.json())
             .then(results => {
-                console.log('results', results);
                 this.props.dispatch({
                     type: 'FETCH_USERS',
                     results: results
