@@ -21,6 +21,7 @@ class Pagination extends React.Component {
         let rows = [],
             pages = this.getPages();
 
+        // todo make pagination disabled after click. enabled when loaded
         for (let i = 0; i < pages; i++) {
             rows.push(<li key={i} className='page-item'>
                 <a onClick={(e) => this.paginationClick(e)} data-page={i + 1} className='page-link'>{i +1}</a>
