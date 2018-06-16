@@ -1,33 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {
+    Link
+} from 'react-router-dom';
+
+import Name from './partials/name';
+import HeightGender from './partials/heightGender';
+import Films from './partials/Films';
 
 class SingleItem extends React.Component {
-    // todo remove state if not needed
-    constructor(props) {
-        super(props);
-        this.state = ({
-            open: false
-        })
-    }
-
-
-    // todo clean console.logs
     render() {
         let selected = this.props.swCharacters.selected;
-        console.log(selected);
-        console.log(this.props.swCharacters.index);
 
         return (
             // todo finish this one
             <div className='single-item'>
                 {Object.keys(selected).length > 0 ? (
                     <div className='details'>
-                        <h2>{selected.name}</h2>
-                        <p>Height: {selected.height}, gender: {selected.gender}</p>
-                        <p>Films: {selected.films}</p>
+                        <Name details={selected}/>
+                        <HeightGender details={selected} />
+                        <Films/>
+                        <Link to='/'>Back to Home</Link>
                     </div>
-                ) : null}
+                ) : <div>Nothing selected. Please go back to <Link to='/'>homepage</Link></div>}
             </div>
+            // todo add back button
         );
     }
 }
