@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import {
     Link
 } from 'react-router-dom';
+import { Table } from 'react-bootstrap';
 
 import Loader from './Loader'
 
 class ResultsList extends React.Component {
-
     // todo change that function name
     nameClick(item) {
         this.props.dispatch({
@@ -16,52 +16,41 @@ class ResultsList extends React.Component {
         });
     }
 
-
     render() {
         let results = this.props.swCharacters.results.results,
             isLoading = this.props.swCharacters.isLoading;
 
         return (
             !isLoading ? (
-                // todo rebuild this to better table view? Boostrap Table
-                // todo add LINK's and onClick actions
                 <div className='characters-table'>
-                    <div className='name-column column'>
-                        <h4>Name</h4>
+                    <Table striped bordered condensed hover>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Height</th>
+                            <th>Gender</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         {
                             results.map((item, index) => {
                                 return (
-                                    <Link to="/people/" onClick={() => this.nameClick(item)} key={index} className='name detail'>
-                                        {item.name}
-                                    </Link>
+                                    <tr key={index}>
+                                        <td onClick={() => this.nameClick(item)}>
+                                            <Link to='/people/'>{item.name}</Link>
+                                        </td>
+                                        <td onClick={() => this.nameClick(item)}>
+                                            <Link to='/people/'>{item.height}</Link>
+                                        </td>
+                                        <td onClick={() => this.nameClick(item)}>
+                                            <Link to='/people/'>{item.gender}</Link>
+                                        </td>
+                                    </tr>
                                 )
                             })
                         }
-                    </div>
-                    <div className='height-column column'>
-                        <h4>Height</h4>
-                        {
-                            results.map((item, index) => {
-                                return (
-                                    <div key={index} className='height detail'>
-                                        {item.height}
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <div className='gender-column column'>
-                        <h4>Gender</h4>
-                        {
-                            results.map((item, index) => {
-                                return (
-                                    <div key={index} className='gender detail'>
-                                        {item.gender}
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
+                        </tbody>
+                    </Table>
                 </div>
             ) : (
                 <Loader/>
