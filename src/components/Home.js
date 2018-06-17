@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 
 const Home = () => {
     return (
-        <div>
+        <div className='home'>
             <ResultsList/>
             <Pagination/>
         </div>
