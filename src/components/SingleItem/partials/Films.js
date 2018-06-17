@@ -35,8 +35,8 @@ class Films extends React.Component {
                 <div>
                     <p>Films: </p>
                     <ul>
-                        {this.state.films.map((film) => (
-                            <li>{film}</li>
+                        {this.state.films.map((film, index) => (
+                            <li key={index}>{film}</li>
                         ))}
                     </ul>
                 </div>
