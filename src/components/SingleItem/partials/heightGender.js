@@ -1,9 +1,13 @@
 import React from 'react';
 
 const heightGender = ( details ) => {
+    let { height, gender } = details.details;
+
     return (
-        // todo check why details is twice (check SingleItem.js as well)
-        <p>Height: {details.details.height}, gender: {details.details.gender}</p>
+        <div>
+            <p>Height: {height !== 'unknown' ? height + ' cm' : 'unknown'}</p>
+            <p>Gender: {gender !== 'n/a' ? gender : 'unknown'}</p>
+        </div>
     );
 };
 
