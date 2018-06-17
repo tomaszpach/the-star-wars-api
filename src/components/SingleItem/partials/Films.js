@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-import Loader from './../../Loader';
-
 class Films extends React.Component {
     constructor(props) {
         super(props);
@@ -33,8 +31,18 @@ class Films extends React.Component {
 
     render () {
         return (
-            // todo add loader
-            <p>Films: {this.state.films.map((film) => film + ', ')}</p>
+            this.state.films.length > 0 ? (
+                <div>
+                    <p>Films: </p>
+                    <ul>
+                        {this.state.films.map((film) => (
+                            <li>{film}</li>
+                        ))}
+                    </ul>
+                </div>
+            ) : (
+                <p>Films: loading...</p>
+            )
         );
     }
 }
