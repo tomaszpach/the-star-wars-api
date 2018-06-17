@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-// todo remove console.logs
-
 class FetchUsers extends React.Component {
     fetchUsers() {
         let page = this.props.swCharacters.page || 1;
