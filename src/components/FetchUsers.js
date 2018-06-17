@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 
+// todo add cache / localStorage for fetched data
 class FetchUsers extends React.Component {
     fetchUsers() {
         let page = this.props.swCharacters.page || 1;
