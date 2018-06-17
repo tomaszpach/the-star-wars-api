@@ -29,10 +29,7 @@ class FetchUsers extends React.Component {
     }
 
     render() {
-        return (
-            // todo check if this have to be here
-            <span>.</span>
-        )
+        return null;
     }
 }
 
