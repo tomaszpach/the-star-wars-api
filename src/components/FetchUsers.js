@@ -31,7 +31,7 @@ class FetchUsers extends React.Component {
     render() {
         return (
             // todo check if this have to be here
-            <h2>The Star Wars characters:</h2>
+            <span>.</span>
         )
     }
 }
