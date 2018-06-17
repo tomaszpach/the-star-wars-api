@@ -4,6 +4,8 @@ import {createStore} from 'redux';
 import {Provider} from "react-redux/";
 
 import './stylesheets/main.scss';
+// todo find better name for this js file
+import './js/utils';
 import App from './components/App';
 import {reducers} from './reducers/index';
 
