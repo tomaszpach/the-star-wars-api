@@ -8,8 +8,7 @@ import { Table } from 'react-bootstrap';
 import Loader from './Loader'
 
 class ResultsList extends React.Component {
-    // todo change that function name
-    nameClick(item) {
+    dispatchSelectedChar(item) {
         this.props.dispatch({
             type: 'SELECTED_CHARACTER',
             selected: item
@@ -36,13 +35,13 @@ class ResultsList extends React.Component {
                             results.map((item, index) => {
                                 return (
                                     <tr key={index}>
-                                        <td onClick={() => this.nameClick(item)}>
+                                        <td onClick={() => this.dispatchSelectedChar(item)}>
                                             <Link to='/people/'>{item.name}</Link>
                                         </td>
-                                        <td onClick={() => this.nameClick(item)}>
+                                        <td onClick={() => this.dispatchSelectedChar(item)}>
                                             <Link to='/people/'>{item.height}</Link>
                                         </td>
-                                        <td onClick={() => this.nameClick(item)}>
+                                        <td onClick={() => this.dispatchSelectedChar(item)}>
                                             <Link to='/people/'>{item.gender}</Link>
                                         </td>
                                     </tr>

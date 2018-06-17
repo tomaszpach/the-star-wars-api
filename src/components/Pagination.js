@@ -14,17 +14,16 @@ class Pagination extends React.Component {
         return (count / 10);
     }
 
-    paginationClick(e) {
+    dispatchPaginationChange(e) {
         this.props.dispatch({
             type: 'CHANGE_PAGE',
             isLoading: true,
             page: parseInt(e.target.dataset.page)
         });
-        this.updateState(e);
+        this.updateActivePageState(e);
     }
 
-    // todo change name of this function
-    updateState(e) {
+    updateActivePageState(e) {
         this.setState({
             activePage: parseInt(e.target.dataset.page)
         });
@@ -34,11 +33,10 @@ class Pagination extends React.Component {
         let rows = [],
             pages = this.getPages();
 
-        // todo make pagination disabled after click. enabled when loaded
         for (let i = 0; i < pages; i++) {
             rows.push(
                 <li key={i} className='page-item'>
-                    <a onClick={(e) => this.paginationClick(e)} data-page={i + 1} className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</a>
+                    <a onClick={(e) => this.dispatchPaginationChange(e)} data-page={i + 1} className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</a>
                 </li>
             );
         }
