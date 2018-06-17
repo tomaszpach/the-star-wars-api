@@ -11,7 +11,7 @@ class Pagination extends React.Component {
 
     getPages() {
         let count = parseInt(this.props.swCharacters.results.count);
-        return (count / 10) + 1;
+        return (count / 10);
     }
 
     paginationClick(e) {
