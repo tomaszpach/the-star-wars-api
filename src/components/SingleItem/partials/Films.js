@@ -34,11 +34,11 @@ class Films extends React.Component {
             this.state.films.length > 0 ? (
                 <div>
                     <p>Films: </p>
-                    <ul>
+                    <ol>
                         {this.state.films.map((film, index) => (
-                            <li key={index}>{film}</li>
+                            <li key={index}>"{film}"</li>
                         ))}
-                    </ul>
+                    </ol>
                 </div>
             ) : (
                 <p>Films: loading...</p>
