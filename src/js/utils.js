@@ -16,8 +16,8 @@ for (let i = 0; i < numStars; i++) {
 function getRandomPosition() {
     let innerWidth = window.innerWidth,
         innerHeight = window.innerHeight,
-        randomX = Math.floor(Math.random()*innerWidth),
-        randomY = Math.floor(Math.random()*innerHeight);
+        randomX = Math.floor(Math.random()*innerHeight),
+        randomY = Math.floor(Math.random()*innerWidth);
 
     return [randomX,randomY];
 }
