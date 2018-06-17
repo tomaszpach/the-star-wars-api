@@ -32,6 +32,13 @@ body {
             }
         }
 
+        .single-item {
+            a {
+                font-weight: bold;
+                color: $primaryYellow-color;
+            }
+        }
+
         .pagination-wrapper {
             text-align: center;
 
@@ -40,15 +47,30 @@ body {
                     cursor: pointer;
                     color: #FFE81F;
                     background-color: transparent;
-                    transition: background-color 300ms, color 300ms;
+                    transition: background-color $transitionTime, color $transitionTime;
 
                     &.active {
                         cursor: not-allowed;
                     }
                     &.active, &:hover {
-                        background-color: #fff;
                         color: #000;
+                        background-color: $primaryYellow-color;
+                        border-color: $primaryYellow-color;
                     }
+                }
+            }
+        }
+        button {
+            &.btn-default {
+                background: transparent;
+                text-shadow: none;
+                color: $primaryYellow-color;
+                transition: background $transitionTime, color $transitionTime;
+
+                &:hover {
+                    color: #000;
+                    background-color: $primaryYellow-color;
+                    border-color: $primaryYellow-color;
                 }
             }
         }
