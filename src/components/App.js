@@ -6,6 +6,7 @@ import {
 
 import FetchUsers from './FetchUsers';
 
+import Header from './Header/Header';
 import Home from './Home';
 import About from './About';
 
@@ -16,6 +17,7 @@ class App extends Component {
                 <div className="container">
                     <FetchUsers/>
 
+                    <Header/>
                     <Route exact path="/" component={Home}/>
                     <Route path="/people/" component={About}/>
                 </div>
