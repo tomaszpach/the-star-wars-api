@@ -5,7 +5,22 @@ import Details from './partials/details';
 import NothingFound from './partials/nothingFound';
 
 class SingleItem extends React.Component {
-    // todo fetch details based on URL (people :id)
+    // todo check why id 17 is empty?
+    fetchUsers(peopleId) {
+        fetch(`https://swapi.co/api/people/${peopleId}/`)
+            .then(response => response.json())
+            .then(results => {
+                this.props.dispatch({
+                    type: 'SELECTED_CHARACTER',
+                    selected: results
+                });
+            });
+    }
+
+    componentDidMount() {
+        this.fetchUsers(this.props.props.match.params.peopleId);
+    }
+
     render() {
         let selected = this.props.swCharacters.selected;
 

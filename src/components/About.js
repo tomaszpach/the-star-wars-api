@@ -2,9 +2,9 @@ import React from 'react';
 
 import SingleItem from './SingleItem/SingleItem';
 
-const About = () => {
+const About = (props) => {
     return (
-        <SingleItem/>
+        <SingleItem props={props}/>
     );
 };
 

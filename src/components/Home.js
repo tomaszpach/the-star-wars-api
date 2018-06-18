@@ -7,7 +7,7 @@ const Home = (props) => {
     return (
         <div className='characters-table'>
             <ResultsList/>
-            <Pagination match={props.match.params.id}/>
+            <Pagination match={props.match.params.pageId}/>
         </div>
     );
 };
