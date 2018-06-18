@@ -8,8 +8,8 @@ class Pagination extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePage: this.props.swCharacters.page || 0
-        }
+            activePage: parseInt(this.props.match) || this.props.swCharacters.page
+        };
     }
 
     getPages() {
@@ -40,7 +40,9 @@ class Pagination extends React.Component {
             let pageId = i + 1;
             rows.push(
                 <li key={i} className='page-item'>
-                    <Link to={`/page/` + pageId + `/`} onClick={(e) => this.dispatchPaginationChange(e)} data-page={i + 1} className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</Link>
+                    <Link to={`/page/` + pageId + `/`} onClick={(e) => this.dispatchPaginationChange(e)}
+                          data-page={i + 1}
+                          className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</Link>
                 </li>
             );
         }
