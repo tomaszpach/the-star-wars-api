@@ -19,8 +19,8 @@ class App extends Component {
                     <FetchUsers/>
 
                     <Header/>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/people/" component={About}/>
+                    <Route exact path="/" props={this.props} component={Home}/>
+                    <Route path="/people/:id/" props={this.props} component={About}/>
                     <Footer/>
                 </div>
             </Router>

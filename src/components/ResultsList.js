@@ -16,8 +16,7 @@ class ResultsList extends React.Component {
     }
 
     render() {
-        let results = this.props.swCharacters.results.results,
-            isLoading = this.props.swCharacters.isLoading;
+        let { results, isLoading, page } = this.props.swCharacters;
 
         return (
             !isLoading ? (
@@ -32,17 +31,18 @@ class ResultsList extends React.Component {
                         </thead>
                         <tbody>
                         {
-                            results.map((item, index) => {
+                            results.results.map((item, index) => {
+                                let id = (10 * (page - 1)) + index + 1;
                                 return (
                                     <tr key={index}>
                                         <td onClick={() => this.dispatchSelectedChar(item)}>
-                                            <Link to='/people/'>{item.name}</Link>
+                                            <Link to={`/people/` + id + `/`}>{item.name}</Link>
                                         </td>
                                         <td onClick={() => this.dispatchSelectedChar(item)}>
-                                            <Link to='/people/'>{item.height}</Link>
+                                            <Link to={`/people/` + id + `/`}>{item.height}</Link>
                                         </td>
                                         <td onClick={() => this.dispatchSelectedChar(item)}>
-                                            <Link to='/people/'>{item.gender}</Link>
+                                            <Link to={`/people/` + id + `/`}>{item.gender}</Link>
                                         </td>
                                     </tr>
                                 )
