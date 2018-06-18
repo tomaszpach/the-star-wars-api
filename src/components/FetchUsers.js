@@ -3,10 +3,7 @@ import {connect} from "react-redux";
 
 // todo add cache / localStorage for fetched data
 class FetchUsers extends React.Component {
-    fetchUsers() {
-        let page = this.props.swCharacters.page || 1;
-
-        // todo take page number from URL
+    fetchUsers(page) {
         fetch(`https://swapi.co/api/people/?page=${page}`)
             .then(response => response.json())
             .then(results => {
@@ -17,13 +14,20 @@ class FetchUsers extends React.Component {
             });
     }
 
+    getPageFromUrl() {
+        let href = window.location.href,
+            split = href.split('/');
+
+        this.fetchUsers(split[4] || 1);
+    }
+
     componentDidMount() {
-        this.fetchUsers();
+        this.getPageFromUrl();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.swCharacters.page !== this.props.swCharacters.page) {
-            this.fetchUsers();
+            this.getPageFromUrl();
         }
     }
 
