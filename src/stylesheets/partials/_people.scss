@@ -1,0 +1,14 @@
+@import "../variables";
+
+body {
+    #app {
+        .single-item {
+            margin-bottom: 20px;
+
+            a {
+                font-weight: bold;
+                color: $primaryYellow-color;
+            }
+        }
+    }
+}

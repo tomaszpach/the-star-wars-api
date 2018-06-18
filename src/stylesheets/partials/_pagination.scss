@@ -1,0 +1,27 @@
+@import "../variables";
+
+body {
+    #app {
+        .pagination-wrapper {
+            text-align: center;
+
+            .pagination {
+                a {
+                    cursor: pointer;
+                    color: #FFE81F;
+                    background-color: transparent;
+                    transition: background-color $transitionTime, color $transitionTime;
+
+                    &.active {
+                        cursor: not-allowed;
+                    }
+                    &.active, &:hover {
+                        color: #000;
+                        background-color: $primaryYellow-color;
+                        border-color: $primaryYellow-color;
+                    }
+                }
+            }
+        }
+    }
+}

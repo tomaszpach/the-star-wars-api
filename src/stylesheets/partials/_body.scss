@@ -1,0 +1,29 @@
+@import "../variables";
+
+body {
+    overflow-x: hidden;
+    color: $primaryYellow-color;
+    background-color: #000;
+
+    .star {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background-color: #fff;
+    }
+}
+
+button {
+    &.btn-default {
+        background: transparent;
+        text-shadow: none;
+        color: $primaryYellow-color;
+        transition: background $transitionTime, color $transitionTime;
+
+        &:hover {
+            color: #000;
+            background-color: $primaryYellow-color;
+            border-color: $primaryYellow-color;
+        }
+    }
+}

@@ -1,4 +1,7 @@
-@import "app";
-@import "loader";
-
-// todo think about moving styles to separate files
+@import "partials/body";
+@import "partials/header";
+@import "partials/characters-table";
+@import "partials/people";
+@import "partials/pagination";
+@import "partials/footer";
+@import "partials/loader";

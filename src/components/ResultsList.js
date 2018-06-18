@@ -21,7 +21,7 @@ class ResultsList extends React.Component {
 
         return (
             !isLoading ? (
-                <div className='characters-table'>
+                <div>
                     <Table striped bordered condensed hover>
                         <thead>
                         <tr>
