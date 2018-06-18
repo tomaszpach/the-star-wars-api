@@ -4,10 +4,10 @@ import {
     Link
 } from 'react-router-dom';
 
-const Logo = () => {
+const Logo = (props) => {
     return (
         <section className="logo">
-            <Link to='/'>
+            <Link to={`/page/${props.page}/`}>
                 <svg id="Layer_1" width="200px" height="120px" viewBox="0 0 693.615 419.375">
                     <g id="Layer_2">
                         <g>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from "react-redux";
 
 // todo add cache / localStorage for fetched data
-class FetchUsers extends React.Component {
+class FetchUsers extends Component {
     fetchUsers(page) {
         fetch(`https://swapi.co/api/people/?page=${page}`)
             .then(response => response.json())

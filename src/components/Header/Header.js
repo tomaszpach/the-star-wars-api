@@ -2,10 +2,10 @@ import React from 'react';
 
 import Logo from './Logo';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <Logo/>
+            <Logo page={props.page}/>
         </header>
     );
 };

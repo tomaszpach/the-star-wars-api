@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
 import {
     BrowserRouter as Router,
     Route
@@ -18,7 +19,7 @@ class App extends Component {
                 <div className="container">
                     <FetchUsers/>
 
-                    <Header/>
+                    <Header page={this.props.swCharacters.page}/>
                     <Route exact path="/" props={this.props} component={Home}/>
                     <Route exact path="/page/:pageId/" props={this.props} component={Home}/>
                     <Route path="/people/:peopleId/" props={this.props} component={About}/>
@@ -29,4 +30,10 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return ({
+        swCharacters: state.swCharacters
+    })
+}
+
+export default connect(mapStateToProps)(App)
