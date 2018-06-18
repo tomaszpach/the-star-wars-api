@@ -6,8 +6,6 @@ const initialState = {
 };
 
 export default function swCharacters(state = initialState, action) {
-    console.log(state);
-    console.log(action);
     switch (action.type) {
         case 'FETCH_USERS':
             return {
