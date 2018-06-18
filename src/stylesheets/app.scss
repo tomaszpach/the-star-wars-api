@@ -81,6 +81,21 @@ body {
         }
     }
 
+    footer {
+        .glyphicon-question-sign {
+            cursor: pointer;
+            font-size: 30px;
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            top: auto;
+        }
+    }
+
+    .how-to.popover {
+        color: #000;
+    }
+
     .star {
         position: absolute;
         width: 1px;

@@ -14,7 +14,7 @@ class FetchUsers extends React.Component {
                     type: 'FETCH_USERS',
                     results: results
                 });
-            })
+            });
     }
 
     componentDidMount() {
