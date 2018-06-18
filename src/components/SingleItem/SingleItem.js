@@ -5,7 +5,7 @@ import Details from './partials/details';
 import NothingFound from './partials/nothingFound';
 
 class SingleItem extends React.Component {
-    // todo fetch details based on URL
+    // todo fetch details based on URL (people :id)
     render() {
         let selected = this.props.swCharacters.selected;
 
