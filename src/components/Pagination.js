@@ -1,5 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {
+    Link
+} from 'react-router-dom';
 
 class Pagination extends React.Component {
     constructor(props) {
@@ -34,9 +37,10 @@ class Pagination extends React.Component {
             pages = this.getPages();
 
         for (let i = 0; i < pages; i++) {
+            let pageId = i + 1;
             rows.push(
                 <li key={i} className='page-item'>
-                    <a onClick={(e) => this.dispatchPaginationChange(e)} data-page={i + 1} className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</a>
+                    <Link to={`/page/` + pageId + `/`} onClick={(e) => this.dispatchPaginationChange(e)} data-page={i + 1} className={i + 1 === this.state.activePage ? 'page-link active' : 'page-link'}>{i + 1}</Link>
                 </li>
             );
         }

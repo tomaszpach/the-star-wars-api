@@ -20,6 +20,7 @@ class App extends Component {
 
                     <Header/>
                     <Route exact path="/" props={this.props} component={Home}/>
+                    <Route exact path="/page/:id/" props={this.props} component={Home}/>
                     <Route path="/people/:id/" props={this.props} component={About}/>
                     <Footer/>
                 </div>
